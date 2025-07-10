@@ -31,5 +31,25 @@ for i in range(m):
         # n개중 아무거나 2개 뽑기 nC2
         result += (count[i] * (count[i]-1) // 2)
         
-print(count)
 print(result)
+
+"""
+import sys
+
+n, m = map(int,sys.stdin.readline().split())
+
+check = [0 for _ in range(m)]
+S = list(map(int,sys.stdin.readline().split()))
+
+for i in range(1,len(S)):
+    S[i] = S[i-1] + S[i]
+    
+for i in S:
+    check[i % m] += 1
+    
+ans = check[0]
+for i in check:
+    ans += (i * (i-1))/2
+    
+print(int(ans))
+"""
