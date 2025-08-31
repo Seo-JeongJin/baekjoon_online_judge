@@ -1,11 +1,10 @@
+import sys
 
-txt = input()
+vowels = set("aeiouAEIOU")
 
-aeiou = ["a", "e", "i", "o", "u"
-         "A", "E", "I", "O", "U"]
-
-count = 0
-for char in txt:
-    if char in aeiou:
-        count += 1
-print(count)
+for line in sys.stdin:
+    line = line.rstrip("\n")
+    if line == "#":
+        break
+    cnt = sum(1 for ch in line if ch in vowels)
+    print(cnt)
