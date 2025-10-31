@@ -7,7 +7,7 @@ for _ in range(t):
     total_score = 0.0
     
     for _ in range(n):
-        c, g = input().split()
+        c, g = input().sqplit()
         c = int(c)
         g = float(g)
         total_credit += c
