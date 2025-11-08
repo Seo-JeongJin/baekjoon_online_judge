@@ -1,19 +1,11 @@
+n = input()
 
-T = int(input())
+count = 0
+while len(n) > 1:
+    product = 1
+    for digit in n:
+        product *= int(digit)
+    n = str(product)
+    count += 1
 
-for _ in range(T):
-    encrypted = input()
-    rule = input()
-    
-    decrypt_map = {}
-    for i in range(26):
-        decrypt_map[rule[i]] = chr(ord('A') + i)
-    
-    result = ""
-    for ch in encrypted:
-        if ch == " ":
-            result += " "
-        else:
-            result += decrypt_map[ch]
-    
-    print(result)
+print(count)
